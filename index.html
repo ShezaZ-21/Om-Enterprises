@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OM- Premium Import & Export</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="assets/images/logo.jpeg" alt="OM Enterprises Logo" class="logo-image">
+                    <span class="logo-text-name">OM Enterprises</span>
+                </div>
+                <nav class="nav">
+                    <ul>
+                        <li><a href="index.html" class="active">Home</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Slider Section -->
+    <section class="hero-slider" id="home">
+        <div class="slider-container">
+            <div class="slide active" style="background-image: url('img/bg1.png');">
+                <div class="slide-content">
+                    <div class="container">
+                        <div class="slide-text">
+                            <span class="slide-tag">PREMIUM INDIAN SAUCE EXPORTER</span>
+                            <h2>Authentic Indian Flavours, Exported to the World</h2>
+                            <p>OM supplies premium Tamarind & Mint sauces sourced directly from India's flavor hubs. Bulk pricing, OEM packaging, and consistent quality.</p>
+                            <div class="slide-buttons">
+                                <a href="contact.html" class="btn-primary">Request a Quote →</a>
+                                <a href="products.html" class="btn-secondary">Explore Products</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide" style="background-image: url('img/bg.png');">
+                <div class="slide-content">
+                    <div class="container">
+                        <div class="slide-text">
+                            <span class="slide-tag">Halal & FSSAI CERTIFIED</span>
+                            <h2>100% Natural Ingredients</h2>
+                            <p>Pure, authentic flavours sourced from trusted farms. Meeting international food safety standards for global export.</p>
+                            <div class="slide-buttons">
+                                <a href="contact.html" class="btn-primary">Contact Us →</a>
+                                <a href="about.html" class="btn-secondary">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide" style="background-image: url('img/cover.png');">
+                <div class="slide-content">
+                    <div class="container">
+                        <div class="slide-text">
+                            <span class="slide-tag">GLOBAL EXPORT PARTNER</span>
+                            <h2>Your Trusted Partner for Worldwide Distribution</h2>
+                            <p>Direct from source pricing with no middlemen. Your trusted partner for distributors, retail chains, and food businesses worldwide.</p>
+                            <div class="slide-buttons">
+                                <a href="contact.html" class="btn-primary">Get Started →</a>
+                                <a href="products.html" class="btn-secondary">View Products</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide" style="background-image: url('img/bg3.png');">
+                <div class="slide-content">
+                    <div class="container">
+                        <div class="slide-text">
+                            <span class="slide-tag">QUALITY ASSURED</span>
+                            <h2>Export-Grade Products for Global Markets</h2>
+                            <p>Our products meet international quality standards and are trusted by businesses across the globe for their consistency and premium quality.</p>
+                            <div class="slide-buttons">
+                                <a href="contact.html" class="btn-primary">Contact Us →</a>
+                                <a href="products.html" class="btn-secondary">View Products</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slider-controls">
+                <button class="slider-btn prev-btn" onclick="changeSlide(-1)">&#10094;</button>
+                <button class="slider-btn next-btn" onclick="changeSlide(1)">&#10095;</button>
+            </div>
+            <div class="slider-dots">
+                <span class="dot active" onclick="currentSlide(0)"></span>
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3>100% Natural Ingredients</h3>
+                    <p>Pure, authentic flavours sourced from trusted farms</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3>Halal & FSSAI Certified Quality</h3>
+                    <p>Meeting international food safety standards</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-tags"></i>
+                    </div>
+                    <h3>Direct From Source Pricing</h3>
+                    <p>Competitive rates with no middlemen involved</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Services</h2>
+                <p>Comprehensive solutions designed to elevate your business</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <h3>Bulk Sauce Export</h3>
+                    <p>Premium Tamarind & Mint Sauce exported in bulk quantities for distributors and food businesses worldwide.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-boxes"></i>
+                    </div>
+                    <h3>OEM Private Labeling</h3>
+                    <p>Customizable labeling, packaging, and branding for retail chains and private label partners.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3>Halal& FSSAI Certified</h3>
+                    <p>All products meet international food safety standards with full compliance documentation.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Direct-from-Source</h3>
+                    <p>Sourced straight from India's tamarind hubs – no middlemen, unbeatable bulk pricing.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Global Logistics</h3>
+                    <p>Streamlined export process from India to your port. Reliable, timely shipping worldwide.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3>Custom Formulation</h3>
+                    <p>Tailored sauce profiles, brix levels, and packaging sizes to match your market needs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section class="products" id="products">
+        <div class="container">
+            <div class="section-header">
+                <h2>Featured Products</h2>
+                <p>Innovative solutions that set industry standards</p>
+            </div>
+            <div class="products-grid" id="featured-products-grid"></div>
+            <div class="section-footer">
+                <a href="products.html" class="btn-outline">View All Products →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Our Clients Say</h2>
+                <p>Trusted by industry leaders worldwide</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"OM's FSSAI certification and consistent quality have made them our go-to supplier. The tamarind sauce flavour is unmatched, and their export logistics are seamless. Highly reliable partner."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Mohammed Al-Rashid</h4>
+                            <span>Gulf Foods Trading</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"The authentic tamarind sauce from OM has been a game-changer for our distribution network. Consistent quality, competitive pricing, and timely shipping every single time."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Rajesh Kumar</h4>
+                            <span>Spice Distributors Intl.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Working with OM has been exceptional. Their OEM private labeling service helped us launch our own brand seamlessly. Professional team and top-notch products."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Sarah Johnson</h4>
+                            <span>Global Retail Chains</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <img src="assets/images/logo.jpeg" alt="OM Enterprises Logo" class="logo-image">
+                    </div>
+                    <p>Your trusted partner for premium Indian sauces and export solutions.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> www.uk123@gmail.com</li>
+                        <li><i class="fab fa-whatsapp"></i> +91 70661 81875</li>
+                        <li><i class="fas fa-map-marker-alt"></i> <a href="https://maps.app.goo.gl/mWqRq7YfMcTANbMr9" target="_blank">Shop. 35 Royal Hub, In Front of Court, Malegaon, Maharashtra, India</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/people/o-m-enterprises/61560194577328/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.linkedin.com/company/o-m-enterprise" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 OM Enterprises. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="products-data.js?v=2"></script>
+    <script src="public-products.js?v=2"></script>
+    <script src="script.js"></script>
+    <script>
+        // The home-page cards use the same database catalogue as the admin panel.
+        loadPublicProducts().then(products => {
+            const grid = document.getElementById('featured-products-grid');
+            products.slice(0, 3).forEach(product => {
+                const card = document.createElement('a');
+                card.href = `product-detail.html?id=${encodeURIComponent(product.publicId || product.id)}`;
+                card.className = 'product-card';
+
+                const imageBox = document.createElement('div');
+                imageBox.className = 'product-image';
+                const image = document.createElement('img');
+                image.src = product.image;
+                image.alt = product.name;
+                image.className = 'product-img-actual';
+                imageBox.appendChild(image);
+
+                const info = document.createElement('div');
+                info.className = 'product-info';
+                const category = document.createElement('span');
+                category.className = 'product-category';
+                category.textContent = product.category;
+                const title = document.createElement('h3');
+                title.textContent = product.name;
+                const description = document.createElement('p');
+                description.textContent = product.shortDescription;
+                info.append(category, title, description);
+                card.append(imageBox, info);
+                grid.appendChild(card);
+            });
+        });
+
+        // Hero Slider Functionality
+        let currentSlideIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.dot');
+        const totalSlides = slides.length;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                dots[i].classList.remove('active');
+            });
+            
+            slides[index].classList.add('active');
+            dots[index].classList.add('active');
+        }
+
+        function changeSlide(direction) {
+            currentSlideIndex += direction;
+            
+            if (currentSlideIndex >= totalSlides) {
+                currentSlideIndex = 0;
+            } else if (currentSlideIndex < 0) {
+                currentSlideIndex = totalSlides - 1;
+            }
+            
+            showSlide(currentSlideIndex);
+        }
+
+        function currentSlide(index) {
+            currentSlideIndex = index;
+            showSlide(currentSlideIndex);
+        }
+
+        // Auto slide every 5 seconds
+        setInterval(() => {
+            changeSlide(1);
+        }, 5000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+# ============================================================================
+# .htaccess Security Rules for OM Enterprises Backend
+# ============================================================================
+
+# Disable directory browsing
+Options -Indexes
+
+# Prevent access to sensitive files
+<FilesMatch "^\.">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Block access to configuration files
+<FilesMatch "^(config\.php|db\.php|\.env|\.htaccess)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Prevent access to backup files
+<FilesMatch "\.(bak|backup|old|sql|log|txt)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Disable server signature
+ServerSignature Off
+
+# Prevent clickjacking
+<IfModule mod_headers.c>
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-XSS-Protection "1; mode=block"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# Force HTTPS (uncomment in production)
+# <IfModule mod_rewrite.c>
+#     RewriteEngine On
+#     RewriteCond %{HTTPS} off
+#     RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# </IfModule>
+
+# PHP Security Settings
+<IfModule mod_php7.c>
+    php_flag display_errors Off
+    php_flag log_errors On
+    php_value error_log /path/to/error.log
+    php_value max_execution_time 30
+    php_value upload_max_filesize 2M
+    php_value post_max_size 8M
+</IfModule>
+
+<IfModule mod_php8.c>
+    php_flag display_errors Off
+    php_flag log_errors On
+    php_value error_log /path/to/error.log
+    php_value max_execution_time 30
+    php_value upload_max_filesize 2M
+    php_value post_max_size 8M
+</IfModule>
+
+# Limit request size to prevent DoS attacks
+LimitRequestBody 10485760
+
+# Block common exploit attempts
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    
+    # Block suspicious user agents
+    RewriteCond %{HTTP_USER_AGENT} (libwww-perl|wget|curl|python|nikto|scan|java|go-http-client) [NC]
+    RewriteRule .* - [F,L]
+    
+    # Block access to sensitive directories
+    RewriteRule ^\.git/ - [F,L]
+    RewriteRule ^\.svn/ - [F,L]
+    RewriteRule ^vendor/ - [F,L]
+</IfModule>
+
+# Enable CORS for specific domains (uncomment and customize if needed)
+# <IfModule mod_headers.c>
+#     Header set Access-Control-Allow-Origin "https://yourdomain.com"
+#     Header set Access-Control-Allow-Methods "GET, POST, OPTIONS"
+#     Header set Access-Control-Allow-Headers "Content-Type, Authorization"
+# </IfModule>
+
+# Handle OPTIONS preflight requests
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{REQUEST_METHOD} OPTIONS
+    RewriteRule .* - [R=200,L]
+</IfModule>

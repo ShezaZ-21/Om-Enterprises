@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - OM Premium Import & Export</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="assets/images/logo.jpeg" alt="OM Enterprises Logo" class="logo-image">
+                    <span class="logo-text-name">OM Enterprises</span>
+                </div>
+                <nav class="nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Product Detail Section -->
+    <section class="product-detail">
+        <div class="container">
+            <div class="product-detail-content">
+                <div class="product-detail-image">
+                    <div class="main-product-image">
+                        <img src="assets/images/tamarind-sauce.png" alt="Tamarind Sauce" class="product-detail-img-actual">
+                    </div>
+                    <div class="product-thumbnails">
+                        <div class="thumbnail active">
+                            <img src="assets/images/tamarind-sauce.png" alt="Tamarind Sauce" class="thumbnail-img">
+                        </div>
+                        <div class="thumbnail">
+                            <img src="assets/images/tamarind-sauce.png" alt="Tamarind Sauce View 2" class="thumbnail-img">
+                        </div>
+                    </div>
+                </div>
+                <div class="product-detail-info">
+                    <span class="product-category">Sauces</span>
+                    <h1 id="product-name">Tamarind Sauce</h1>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span>(4.9/5)</span>
+                    </div>
+                    <p class="product-description" id="product-description">
+                        Authentic Indian tamarind sauce with perfect balance of sweet and tangy flavours. Ideal for chaats, snacks, and marinades. Made from 100% natural ingredients sourced directly from India's finest tamarind growing regions.
+                    </p>
+                    <div class="product-features">
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>100% Natural Ingredients</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Halal & FSSAI Certified</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>No Artificial Preservatives</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Shelf Life: 12 Months</span>
+                        </div>
+                    </div>
+                    <div class="product-specs">
+                        <h3>Specifications</h3>
+                        <ul>
+                            <li><strong>Net Weight:</strong> 500ml</li>
+                            <li><strong>Packaging:</strong> Glass Bottle</li>
+                            <li><strong>Storage:</strong> Cool, Dry Place</li>
+                            <li><strong>Origin:</strong> India</li>
+                        </ul>
+                    </div>
+                    <div class="product-actions">
+                        <button class="btn-primary" id="inquiry-btn">Send Inquiry</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Inquiry Form Section -->
+    <section class="inquiry-section" id="inquiry-section" style="display: none;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Product Inquiry</h2>
+                <p>Send us an inquiry about this product</p>
+            </div>
+            <form id="inquiryForm" class="inquiry-form">
+                <input type="hidden" name="product_id" id="inquiry-product-id" value="">
+                <input type="hidden" name="product_name" id="inquiry-product-name" value="">
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="customer_name">Your Name *</label>
+                        <input type="text" id="customer_name" name="customer_name" required placeholder="Your Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="customer_email">Email *</label>
+                        <input type="email" id="customer_email" name="customer_email" required placeholder="your@email.com">
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="customer_phone">Phone</label>
+                        <input type="text" id="customer_phone" name="customer_phone" placeholder="+91 9876543210">
+                    </div>
+                    <div class="form-group">
+                        <label for="customer_company">Company</label>
+                        <input type="text" id="customer_company" name="customer_company" placeholder="Company Name">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="quantity">Quantity Required</label>
+                    <input type="text" id="quantity" name="quantity" placeholder="e.g., 500 bottles">
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Your message or requirements"></textarea>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary">Send Inquiry</button>
+                    <button type="button" class="btn-secondary" id="cancel-inquiry">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Related Products Section -->
+    <section class="related-products">
+        <div class="container">
+            <div class="section-header">
+                <h2>Related Products</h2>
+                <p>You may also like</p>
+            </div>
+            <div class="related-products-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <div class="product-bottles">
+                            <div class="product-bottle bottle-mint"></div>
+                        </div>
+                        <button class="btn-shop-now" onclick="window.location.href='contact.html'">ADD TO INQUIRY</button>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Sauces</span>
+                        <span class="product-tag">Featured</span>
+                        <h3>Mint Sauce</h3>
+                        <p>Fresh mint sauce crafted with premium ingredients.</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <div class="product-bottles">
+                            <div class="product-bottle bottle-tamarind"></div>
+                        </div>
+                        <button class="btn-shop-now" onclick="window.location.href='contact.html'">ADD TO INQUIRY</button>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Bulk Ingredients</span>
+                        <h3>Tamarind Concentrate</h3>
+                        <p>Premium tamarind concentrate for industrial use.</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <div class="product-bottles">
+                            <div class="product-bottle bottle-mint"></div>
+                        </div>
+                        <button class="btn-shop-now" onclick="window.location.href='contact.html'">ADD TO INQUIRY</button>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Private Label</span>
+                        <span class="product-tag">Featured</span>
+                        <h3>OEM Custom Sauce</h3>
+                        <p>Custom sauce formulation for your brand.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <img src="assets/images/logo.jpeg" alt="OM Enterprises Logo" class="logo-image">
+                    </div>
+                    <p>Your trusted partner for premium Indian sauces and export solutions.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> www.uk123@gmail.com</li>
+                        <li><i class="fab fa-whatsapp"></i> +91 70661 81875</li>
+                        <li><i class="fas fa-map-marker-alt"></i> <a href="https://maps.app.goo.gl/mWqRq7YfMcTANbMr9" target="_blank">Shop. 35 Royal Hub, In Front of Court, Malegaon, Maharashtra, India</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/people/o-m-enterprises/61560194577328/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.linkedin.com/company/o-m-enterprise" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 OM Enterprises. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="products-data.js?v=2"></script>
+    <script src="public-products.js?v=2"></script>
+    <script src="script.js"></script>
+    <script>
+        // Product detail page animations and dynamic content
+        document.addEventListener('DOMContentLoaded', async function() {
+            // Get product ID from URL parameter
+            const urlParams = new URLSearchParams(window.location.search);
+            const productId = urlParams.get('id') || '1';
+            
+            // Get product data
+            const product = await getPublicProductById(productId);
+            
+            if (product) {
+                // Update page title
+                document.title = `${product.name} - OMK Premium Import & Export`;
+                
+                // Update product name
+                document.getElementById('product-name').textContent = product.name;
+                
+                // Set inquiry form hidden fields
+                document.getElementById('inquiry-product-id').value = product.databaseId || product.id;
+                document.getElementById('inquiry-product-name').value = product.name;
+                
+                // Update product category
+                document.querySelector('.product-category').textContent = product.category;
+                
+                // Update product description
+                document.getElementById('product-description').textContent = product.description;
+                
+                // Update product rating
+                document.querySelector('.product-rating span').textContent = `(${product.rating}/5)`;
+                
+                // Update main product image
+                const mainImage = document.querySelector('.product-detail-img-actual');
+                if (mainImage) {
+                    mainImage.src = product.image;
+                    mainImage.alt = product.name;
+                }
+                
+                // Update thumbnails
+                const thumbnails = document.querySelectorAll('.thumbnail-img');
+                if (thumbnails[0]) {
+                    thumbnails[0].src = product.thumbnail1;
+                    thumbnails[0].alt = `${product.name} thumbnail 1`;
+                }
+                if (thumbnails[1]) {
+                    thumbnails[1].src = product.thumbnail2;
+                    thumbnails[1].alt = `${product.name} thumbnail 2`;
+                }
+                
+                // Update product features
+                const featuresContainer = document.querySelector('.product-features');
+                featuresContainer.innerHTML = '';
+                product.features.forEach((feature, index) => {
+                    const featureItem = document.createElement('div');
+                    featureItem.className = 'feature-item';
+                    featureItem.style.animationDelay = `${index * 0.1}s`;
+                    featureItem.innerHTML = `
+                        <i class="fas fa-check-circle"></i>
+                        <span>${feature}</span>
+                    `;
+                    featuresContainer.appendChild(featureItem);
+                });
+                
+                // Update product specifications
+                const specsContainer = document.querySelector('.product-specs ul');
+                specsContainer.innerHTML = '';
+                for (const [key, value] of Object.entries(product.specs)) {
+                    const specItem = document.createElement('li');
+                    specItem.innerHTML = `<strong>${key}:</strong> ${value}`;
+                    specsContainer.appendChild(specItem);
+                }
+                
+                // Update related products
+                const relatedProducts = (await loadPublicProducts())
+                    .filter(relatedProduct => relatedProduct.publicId !== product.publicId)
+                    .slice(0, 3);
+                const relatedGrid = document.querySelector('.related-products-grid');
+                relatedGrid.innerHTML = '';
+                
+                relatedProducts.forEach(relatedProduct => {
+                    const relatedCard = document.createElement('div');
+                    relatedCard.className = 'product-card';
+                    relatedCard.style.cursor = 'pointer';
+                    
+                    const imageContainer = document.createElement('div');
+                    imageContainer.className = 'product-image';
+                    imageContainer.innerHTML = `<img src="${relatedProduct.image}" alt="${relatedProduct.name}" class="product-img-actual">`;
+                    
+                    const addToInquiryBtn = document.createElement('button');
+                    addToInquiryBtn.className = 'btn-shop-now';
+                    addToInquiryBtn.textContent = 'ADD TO INQUIRY';
+                    addToInquiryBtn.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        window.location.href = 'contact.html';
+                    });
+                    
+                    imageContainer.appendChild(addToInquiryBtn);
+                    relatedCard.appendChild(imageContainer);
+                    
+                    const productInfo = document.createElement('div');
+                    productInfo.className = 'product-info';
+                    productInfo.innerHTML = `
+                        <span class="product-category">${relatedProduct.category}</span>
+                        ${relatedProduct.tag ? `<span class="product-tag">${relatedProduct.tag}</span>` : ''}
+                        <h3>${relatedProduct.name}</h3>
+                        <p>${relatedProduct.shortDescription}</p>
+                    `;
+                    relatedCard.appendChild(productInfo);
+                    
+                    // Add click event to navigate to product detail page
+                    relatedCard.addEventListener('click', function(e) {
+                        window.location.href = `product-detail.html?id=${encodeURIComponent(relatedProduct.publicId || relatedProduct.id)}`;
+                    });
+                    
+                    relatedGrid.appendChild(relatedCard);
+                });
+            }
+            
+            // Animate on load
+            const productDetailContent = document.querySelector('.product-detail-content');
+            const productDetailInfo = document.querySelector('.product-detail-info');
+            
+            productDetailContent.style.opacity = '0';
+            productDetailContent.style.transform = 'translateY(30px)';
+            
+            setTimeout(() => {
+                productDetailContent.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                productDetailContent.style.opacity = '1';
+                productDetailContent.style.transform = 'translateY(0)';
+            }, 100);
+            
+            // Thumbnail click handler
+            const thumbnails = document.querySelectorAll('.thumbnail');
+            const mainImage = document.querySelector('.product-detail-img-actual');
+            
+            thumbnails.forEach((thumb, index) => {
+                thumb.addEventListener('click', function() {
+                    thumbnails.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Get the thumbnail image source
+                    const thumbImg = this.querySelector('.thumbnail-img');
+                    if (thumbImg && mainImage) {
+                        mainImage.style.opacity = '0';
+                        setTimeout(() => {
+                            mainImage.src = thumbImg.src;
+                            mainImage.style.opacity = '1';
+                        }, 200);
+                    }
+                });
+            });
+
+            // Inquiry button click handler
+            const inquiryBtn = document.getElementById('inquiry-btn');
+            const inquirySection = document.getElementById('inquiry-section');
+            const cancelInquiryBtn = document.getElementById('cancel-inquiry');
+
+            if (inquiryBtn) {
+                inquiryBtn.addEventListener('click', function() {
+                    inquirySection.style.display = 'block';
+                    inquirySection.scrollIntoView({ behavior: 'smooth' });
+                });
+            }
+
+            if (cancelInquiryBtn) {
+                cancelInquiryBtn.addEventListener('click', function() {
+                    inquirySection.style.display = 'none';
+                });
+            }
+
+            // Inquiry form submission
+            const inquiryForm = document.getElementById('inquiryForm');
+            if (inquiryForm) {
+                inquiryForm.addEventListener('submit', async function(e) {
+                    e.preventDefault();
+
+                    const submitBtn = this.querySelector('button[type="submit"]');
+                    if (submitBtn.disabled) return;
+                    submitBtn.disabled = true;
+                    submitBtn.textContent = 'Sending...';
+
+                    const formData = new FormData(this);
+
+                    try {
+                        const response = await fetch('backend/inquiry.php', {
+                            method: 'POST',
+                            body: formData
+                        });
+
+                        const result = await response.json();
+
+                        if (result.success) {
+                            alert(result.message);
+                            this.reset();
+                            // Reset hidden fields
+                            document.getElementById('inquiry-product-id').value = product.id;
+                            document.getElementById('inquiry-product-name').value = product.name;
+                            inquirySection.style.display = 'none';
+                        } else {
+                            alert('Error: ' + result.message);
+                        }
+
+                    } catch (error) {
+                        console.error('Error:', error);
+                        alert('Something went wrong. Please try again.');
+                    } finally {
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = 'Send Inquiry';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

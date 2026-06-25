@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - OM Premium Import & Export</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="assets/images/logo.jpeg" alt="OM Enterprises Logo" class="logo-image">
+                    <span class="logo-text-name">OM Enterprises</span>
+                </div>
+                <nav class="nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="products.html" class="active">Products</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Products Page Header -->
+    <section class="products-page-header">
+        <div class="container">
+            <div class="page-header-content">
+                <h1>Our Products</h1>
+                <p>Innovative, eco-friendly products that deliver exceptional value and performance.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Filter Section -->
+    <section class="products-filter">
+        <div class="container">
+            <div class="filter-content">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search products by name or description...">
+                </div>
+                <div class="filter-options">
+                    <select class="category-select">
+                        <option value="all">All Categories</option>
+                        <option value="sauces">Sauces</option>
+                        <option value="fresh-vegetables">Fresh Vegetables</option>
+                        <option value="fresh-fruits">Fresh Fruits</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Grid Section -->
+    <section class="products-page-grid">
+        <div class="container">
+            <div class="products-full-grid" id="products-grid">
+                <!-- Products will be dynamically loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <img src="assets/images/logo.jpeg" alt="OM Enterprises Logo" class="logo-image">
+                    </div>
+                    <p>Your trusted partner for premium Indian sauces and export solutions.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> www.uk123@gmail.com</li>
+                        <li><i class="fab fa-whatsapp"></i> +91 70661 81875</li>
+                        <li><i class="fas fa-map-marker-alt"></i> <a href="https://maps.app.goo.gl/mWqRq7YfMcTANbMr9" target="_blank">Shop. 35 Royal Hub, In Front of Court, Malegaon, Maharashtra, India</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/people/o-m-enterprises/61560194577328/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.linkedin.com/company/o-m-enterprise" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 OM Enterprises. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="products-data.js?v=2"></script>
+    <script src="public-products.js?v=2"></script>
+    <script src="script.js"></script>
+    <script>
+        // Products page functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const productsGrid = document.getElementById('products-grid');
+            const searchInput = document.querySelector('.search-bar input');
+            const categorySelect = document.querySelector('.category-select');
+
+            // Render products
+            function renderProducts(products) {
+                productsGrid.innerHTML = '';
+                
+                if (products.length === 0) {
+                    productsGrid.innerHTML = '<p style="grid-column: 1/-1; text-align: center; padding: 40px; color: #666;">No products found matching your criteria.</p>';
+                    return;
+                }
+
+                products.forEach(product => {
+                    const productCard = document.createElement('div');
+                    productCard.className = `product-card ${product.tag === 'Featured' ? 'featured-product' : ''}`;
+                    productCard.style.cursor = 'pointer';
+                    
+                    const imageContainer = document.createElement('div');
+                    imageContainer.className = 'product-image';
+                    imageContainer.innerHTML = `<img src="${product.image}" alt="${product.name}" class="product-img-actual">`;
+                    
+                    const addToInquiryBtn = document.createElement('button');
+                    addToInquiryBtn.className = 'btn-shop-now';
+                    addToInquiryBtn.textContent = 'ADD TO INQUIRY';
+                    addToInquiryBtn.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        window.location.href = 'contact.html';
+                    });
+                    
+                    imageContainer.appendChild(addToInquiryBtn);
+                    productCard.appendChild(imageContainer);
+                    
+                    const productInfo = document.createElement('div');
+                    productInfo.className = 'product-info';
+                    productInfo.innerHTML = `
+                        <span class="product-category">${product.category}</span>
+                        ${product.tag === 'Featured' ? '<span class="product-tag">Featured</span>' : ''}
+                        <h3>${product.name}</h3>
+                        <p>${product.shortDescription}</p>
+                    `;
+                    productCard.appendChild(productInfo);
+                    
+                    // Add click event to navigate to product detail page
+                    productCard.addEventListener('click', function(e) {
+                        window.location.href = `product-detail.html?id=${encodeURIComponent(product.publicId || product.id)}`;
+                    });
+                    
+                    productsGrid.appendChild(productCard);
+                });
+            }
+
+            let allProducts = [];
+
+            // Filter products
+            function filterProducts() {
+                const searchTerm = searchInput.value.toLowerCase();
+                const selectedCategory = categorySelect.value;
+
+                let filteredProducts = allProducts.filter(product => {
+                    // Search filter
+                    const matchesSearch = product.name.toLowerCase().includes(searchTerm) || 
+                                         product.description.toLowerCase().includes(searchTerm) ||
+                                         product.shortDescription.toLowerCase().includes(searchTerm);
+                    
+                    // Category filter
+                    let matchesCategory = true;
+                    if (selectedCategory !== 'all') {
+                        const categoryMap = {
+                            'sauces': 'Sauces',
+                            'fresh-vegetables': 'Fresh Vegetables',
+                            'fresh-fruits': 'Fresh Fruits'
+                        };
+                        matchesCategory = product.category === categoryMap[selectedCategory];
+                    }
+
+                    return matchesSearch && matchesCategory;
+                });
+
+                renderProducts(filteredProducts);
+            }
+
+            // Event listeners
+            searchInput.addEventListener('input', filterProducts);
+            categorySelect.addEventListener('change', filterProducts);
+
+            // Database products are the source of truth for the public catalogue.
+            loadPublicProducts().then(products => {
+                allProducts = products;
+                renderProducts(allProducts);
+            }).catch(() => {
+                productsGrid.innerHTML = '<p style="grid-column: 1/-1; text-align: center; padding: 40px; color: #666;">Unable to load products. Please refresh and try again.</p>';
+            });
+        });
+    </script>
+</body>
+</html>
